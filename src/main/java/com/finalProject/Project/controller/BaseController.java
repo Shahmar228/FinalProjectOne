@@ -32,6 +32,7 @@ public class BaseController {
     @GetMapping("/add-computer")
     public String addComputer(Model model){
         model.addAttribute("computer", new Computer());
+        System.out.println("Hello world");
         return "addProduct";
     }
 
