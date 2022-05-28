@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+<nav class="text-center">
+    <h2>Computer Shop</h2>
+    <a sec:authorize="isAuthenticated()" href="/computer-base" class="btn btn-warning">My base</a>
+    <a sec:authorize="!isAuthenticated()" href="/login" class="btn btn-primary">Login</a>
+    <a sec:authorize="!isAuthenticated()" href="/computer-shop/sign-up" class="btn btn-success">Sign Up</a>
+    <a sec:authorize="isAuthenticated()" href="/logout" class="btn btn-danger">Logout</a>
+
+</nav>
+
+
+<div class="container bg-warning row" >
+    <div class="card col-3 text-center bg bg-info" style="width: 18rem;"  th:each="computer : ${computer_list} ">
+        <img src="https://www.techadvisor.com/cmsdata/slideshow/3214618/best_laptops_thumb800.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title" th:text=" ${computer.brand}">Card title</h5><span>
+<!--            <p class="card-text" ><span th:text="${computer.model"></span></p>-->
+            <p class="card-text"><span th:text="${computer.model}"></span></p>
+            <p class="card-text"><span th:text="${computer.price}"></span> </p>
+            <p class="card-text">Full name: <span th:text="${computer.theAccount.fullName}"></span></p>
+            <p class="card-text">Phone number: <span th:text="${computer.theAccount.phoneNumber}"></span></p>
+            <p class="card-text">Email: <span th:text="${computer.theAccount.email}"></span></p>
+            </span>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
