@@ -15,6 +15,10 @@ public class Computer {
 
     private String brand;
     private String model;
+    private String graphicCard;
+    private String ram;
+    private String cpu;
+    private String monitor;
     private String price;
 
 

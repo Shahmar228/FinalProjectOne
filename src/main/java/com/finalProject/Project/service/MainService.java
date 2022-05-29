@@ -71,4 +71,7 @@ for(Computer computer : computerRepository.findAll()){
 }
 
 
+    public Computer getComputerById(long id) {
+    return computerRepository.getComputerById(id);
+    }
 }

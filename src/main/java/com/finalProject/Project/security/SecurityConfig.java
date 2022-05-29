@@ -32,7 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/","/computer-shop","/computer-shop/*").permitAll()
+                .antMatchers("/","/computer-shop","/computer-shop/**").permitAll()
                 .antMatchers("/computer-base", "/computer-base/*").hasAuthority(DATA_READ.getPermission_info())
                 .anyRequest()
                 .authenticated()

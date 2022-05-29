@@ -31,7 +31,7 @@
             <p class="card-text">Phone number: <span th:text="${computer.theAccount.phoneNumber}"></span></p>
             <p class="card-text">Email: <span th:text="${computer.theAccount.email}"></span></p>
             </span>
-
+            <a th:href="@{/computer-shop/info/{id} (id=${computer.id})  }" class="btn btn-primary">Подробно</a>
         </div>
     </div>
 </div>

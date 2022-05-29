@@ -8,4 +8,7 @@ import org.springframework.stereotype.Repository;
 public interface ComputerRepository extends JpaRepository<Computer, Long> {
 
 
+
+
+    Computer getComputerById(long id);
 }
