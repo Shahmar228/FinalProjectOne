@@ -11,6 +11,7 @@ public class ProjectApplication extends WebMvcConfigurationSupport {
 	public static void main(String[] args) {
 		SpringApplication.run(ProjectApplication.class, args);
 		System.out.println("Succes");
+		System.out.println("Everything is ok");
 	}
 
 	@Override
