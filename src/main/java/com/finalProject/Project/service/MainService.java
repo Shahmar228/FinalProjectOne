@@ -74,4 +74,8 @@ for(Computer computer : computerRepository.findAll()){
     public Computer getComputerById(long id) {
     return computerRepository.getComputerById(id);
     }
+
+    public void deleteComputerById(long id) {
+    computerRepository.deleteById(id);
+    }
 }

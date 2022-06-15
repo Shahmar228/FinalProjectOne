@@ -33,7 +33,10 @@
         <td th:text="${computer.brand}">Brand</td>
         <td th:text="${computer.model}">Model</td>
         <td th:text="${computer.price}">Price</td>
-
+<td>
+    <a class="btn btn-success" th:href="@{/computer-base/edit/{id}(id=${computer.id})}">Edit</a>
+    <a class="btn btn-danger" th:href="@{/computer-base/delete/{id}(id=${computer.id})}">Delete</a>
+</td>
     </tr>
     </tbody>
 </table>

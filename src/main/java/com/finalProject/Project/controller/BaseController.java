@@ -7,10 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.ManyToOne;
 
@@ -42,5 +39,18 @@ public class BaseController {
     ){
         mainService.addComputer(theComputer);
         return "redirect:/computer-base";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteComputerById(@PathVariable("id") long id){
+        System.out.println(id);
+        mainService.deleteComputerById(id);
+        return "redirect:/computer-base";
+    }
+    @GetMapping("/edit/{id}")
+    public String editComputerById(@PathVariable("id") long id, Model model){
+Computer computer = mainService.getComputerById(id);
+model.addAttribute("computer",computer);
+return "addProduct";
     }
 }

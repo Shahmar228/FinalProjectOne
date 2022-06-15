@@ -11,13 +11,15 @@
 
 <nav class="text-center">
     <h2>Computer Shop</h2>
+   <h2 sec:authorize="isAuthenticated()">Logged user: <span sec:authentication="name"></span></h2> <br>
     <a sec:authorize="isAuthenticated()" href="/computer-base" class="btn btn-warning">My base</a>
     <a sec:authorize="!isAuthenticated()" href="/login" class="btn btn-primary">Login</a>
     <a sec:authorize="!isAuthenticated()" href="/computer-shop/sign-up" class="btn btn-success">Sign Up</a>
     <a sec:authorize="isAuthenticated()" href="/logout" class="btn btn-danger">Logout</a>
 
 </nav>
-
+<br>
+<br>
 
 <div class="container bg-warning row" >
     <div class="card col-3 text-center bg bg-info" style="width: 18rem;"  th:each="computer : ${computer_list} ">
